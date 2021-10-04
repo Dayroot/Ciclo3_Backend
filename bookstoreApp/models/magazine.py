@@ -3,7 +3,7 @@ from .product import Product
 
 class Magazine(models.Model):
 
-    product = models.OneToOneField(Product, related_name='Magazines', on_delete=models.CASCADE)
+    product = models.OneToOneField(Product, related_name='Magazines', on_delete=models.CASCADE, primary_key=True)
     name = models.CharField('Name', max_length = 45)
     edition = models.IntegerField(default=0)
     publication_date = models.DateTimeField()  

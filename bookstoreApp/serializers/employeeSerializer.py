@@ -25,8 +25,8 @@ class EmployeeSerializer(serializers.ModelSerializer):
         return employeeInstance
     
     def to_representation(self, obj):
-        employee = Employee.objects.get(id= obj.id)
-        user = User.objects.get(id=obj.user_id)
+        employee = obj
+        user = obj.user
         return {
             'id':employee.id,
             'username': user.username,
