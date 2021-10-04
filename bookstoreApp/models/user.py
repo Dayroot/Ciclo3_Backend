@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.contrib.auth.hashers import make_password
-from .employee import Employee
+
 
 
 class UserManager(BaseUserManager):
@@ -24,29 +24,6 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
     
-    def create_employee(self,
-                        username, 
-                        password, 
-                        work_area, 
-                        salary, 
-                        is_seller=False, 
-                        is_inventory_manager=False, 
-                        is_admin=False
-                        ):
-        
-        user= self.create_user(username=username, password=password)
-        user.is_employee= True
-        user.save(using=self._db)
-        
-        Employee.objects.create(
-            user=user,
-            work_area=work_area,
-            salary= salary,
-            is_seller= is_seller,
-            is_inventory_manager=is_inventory_manager,
-            is_admin= is_admin
-            )
-        return user
 
     def create_client(self,username, password):
         user= self.create_user(username=username, password=password)

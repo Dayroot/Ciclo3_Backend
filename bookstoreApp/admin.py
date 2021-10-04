@@ -3,11 +3,11 @@ from .models.employee import Employee
 from .models.workArea import WorkArea
 from .models.user import User
 
-from models.magazine import Magazine
-from models.book import Book
-from models.product import Product
-from models.sale import Sale
-from models.reservation import Reservation
+from .models.magazine import Magazine
+from .models.book import Book
+from .models.product import Product
+from .models.sale import Sale
+from .models.reservation import Reservation
 
 admin.site.register(User)
 admin.site.register(Employee)
