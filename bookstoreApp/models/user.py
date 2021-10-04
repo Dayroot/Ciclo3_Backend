@@ -36,13 +36,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     username= models.CharField('Username', max_length=15, unique=True)
     password= models.CharField('Password', max_length=256)
-    fullname= models.CharField('Fullname', max_length=200)
-    datebirth = models.DateField('Datebirth')
+    fullname= models.CharField('Fullname', max_length=200, blank=True, null=True)
+    datebirth = models.DateField('Datebirth', blank=True, null=True)
     #gender = models.CharField(max_length=1, choices= GENDER_CHOISES, default=GENDER_UNSURE)
-    email = models.EmailField('Email', max_length=320)
-    identification= models.CharField('Identification', max_length=15)
-    phone_number = models.CharField('Phone number',max_length=15)
-    address = models.CharField('Address', max_length=50)
+    email = models.EmailField('Email', max_length=320, blank=True, null=True)
+    identification= models.CharField('Identification', max_length=15, blank=True, null=True)
+    phone_number = models.CharField('Phone number',max_length=15, blank=True, null=True)
+    address = models.CharField('Address', max_length=50,blank=True, null=True)
     is_employee= models.BooleanField(default=False)
     is_client= models.BooleanField(default=False)
     
@@ -53,3 +53,4 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
     USERNAME_FIELD= 'username'
+    EMAIL_FIELD= 'email'
