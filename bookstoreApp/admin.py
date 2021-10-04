@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models.employee import Employee
+from .models.workArea import WorkArea
+from .models.user import User
 
-# Register your models here.
+admin.site.register(User)
+admin.site.register(Employee)
+admin.site.register(WorkArea)
+
+
