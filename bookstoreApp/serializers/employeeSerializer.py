@@ -27,7 +27,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
         employee = obj
         user = obj.user
         return {
-            'id':employee.id,
+            'id':user.id,
             'username': user.username,
             'fullname': user.fullname,
             'datebirth': user.datebirth,
@@ -35,7 +35,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'identification': user.identification,
             'phone number': user.phone_number,
             'address': user.address,
-            'work area': employee.work_area,
+            'work area': employee.work_area.name,
             'salary': employee.salary,
             'is seller': employee.is_seller,
             'is inventory manager': employee.is_inventory_manager,
