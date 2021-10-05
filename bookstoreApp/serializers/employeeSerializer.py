@@ -3,26 +3,37 @@ from bookstoreApp.models.user import User
 from bookstoreApp.models.employee import Employee
 from bookstoreApp.serializers.userSerializer import UserSerializer
 
-# class EmployeeListSerializer(serializers.ListSerializer):
-#     def create(self, validated_data):
-        
 
+# def employee_object(item):
+#     print(item)  
+#     userData = item.pop('user')
+#     userInstance = User.objects.create_user(**userData)
+#     employeeInstance= Employee(user= userInstance,**item)
+#     employeeInstance.save()
+#     return employeeInstance
+
+# 
+# class EmployeeListSerializer(serializers.ListSerializer): 
+    
+#     def create(self, validated_data): 
+#         employees= list(map(employee_object,validated_data))                
+#         #employees= [employee_object(item) for item in validated_data ]
+#         return employees
+# 
 
 class EmployeeSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = Employee
         fields = '__all__'
+        #list_serializer_class = EmployeeListSerializer
         
-    def create(self, validated_data):
-        
+    def create(self, validated_data):       
         userData = validated_data.pop('user')
-        userInstance = User(**userData)
-        userInstance.save()
-        
+        userInstance = User.objects.create_user(**userData)    
         employeeInstance= Employee.objects.create(user= userInstance,**validated_data)
         return employeeInstance
-    
+     
     def to_representation(self, obj):
         employee = obj
         user = obj.user
