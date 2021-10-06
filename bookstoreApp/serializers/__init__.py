@@ -4,3 +4,4 @@ from .productSerializer import ProductSerializer
 from .bookSerializer import BookSerializer
 from .magazineSerializer import MagazineSerializer
 from .saleSerializer import SaleSerializer
+from .reservationSerializer import reservationSerializer
