@@ -4,6 +4,6 @@ from .user import User
 
 
 class Sale(models.Model):
-    product = models.ForeignKey(Product, related_name='Sales', on_delete=models.CASCADE)
-    user = models.ForeignKey(User, related_name='Purchases', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='sold_products', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='purchases', on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0)
