@@ -37,20 +37,23 @@ class EmployeeListSerializer(serializers.ListSerializer):
     def to_representation(self, instance):
         employee_representations= []
         for employee in instance:
-            employee_representations.append({   
-                'id':employee.user_id,
-                'username': employee.user.username,
-                'fullname': employee.user.fullname,
-                'datebirth': employee.user.datebirth,
-                'email': employee.user.email,
-                'identification': employee.user.identification,
-                'phone number': employee.user.phone_number,
-                'address': employee.user.address,
-                'work area': employee.work_area.name,
+            employee_representations.append({ 
+                'user': {
+                    'id':employee.user_id,
+                    'username': employee.user.username,
+                    'fullname': employee.user.fullname,
+                    'datebirth': employee.user.datebirth,
+                    'gender':employee.user.gender,
+                    'email': employee.user.email,
+                    'identification': employee.user.identification,
+                    'phone_number': employee.user.phone_number,
+                    'address': employee.user.address    
+                }, 
+                'work_area': employee.work_area.name,
                 'salary': employee.salary,
-                'is seller': employee.is_seller,
-                'is inventory manager': employee.is_inventory_manager,
-                'is admin': employee.is_admin
+                'is_seller': employee.is_seller,
+                'is_inventory_manager': employee.is_inventory_manager,
+                'is_admin': employee.is_admin
                 }) 
         return employee_representations
 
