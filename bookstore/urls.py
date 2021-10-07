@@ -19,5 +19,5 @@ from bookstoreApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('employee/', views.EmployeeView.as_view()),
+    path('employee/', views.EmployeeDetailView.as_view()),
 ]
