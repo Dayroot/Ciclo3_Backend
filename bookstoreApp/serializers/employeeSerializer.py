@@ -3,6 +3,8 @@ from bookstoreApp.models.user import User
 from bookstoreApp.models.employee import Employee
 from bookstoreApp.serializers.userSerializer import UserSerializer
 
+from rest_framework.fields import empty
+
 
 class EmployeeListSerializer(serializers.ListSerializer):
 
@@ -15,23 +17,15 @@ class EmployeeListSerializer(serializers.ListSerializer):
         return Employee.objects.bulk_create(employees)
 
     def update(self, instance, validated_data):
-        employee_mapping = {employee.user_id: employee for employee in instance}
-        data_mapping = {item['user']['id']: item for item in validated_data}          
-        ret = []                      
-        for employee_id, data in data_mapping.items():          
-            user_data = data.pop('user', None)         
-            employee = employee_mapping.get(employee_id, None)                    
-            if employee is None:               
-                new_user= User.objects.create(**user_data)
-                ret.append(self.child.create(user= new_user, **data))
-            else:
-                User.objects.filter(id=employee_id).update(**user_data)
-                ret.append(self.child.update(employee, **data))
         
-        for employee_id, employee in employee_mapping.items():
-            if employee_id not in data_mapping:
-                User.objects.get(id=employee_id).delete()
-                #employee.delete()          
+        employee_mapping = {index: employee for index, employee in enumerate(instance)}
+        data_mapping = {index: item for index, item in enumerate(validated_data)}          
+        ret = []                      
+        for index, data in data_mapping.items():          
+            user_data = data.pop('user', None)            
+            employee = employee_mapping.get(index, None)                    
+            User.objects.filter(username=user_data['username']).update(**user_data)
+            ret.append(self.child.update(employee, **data))                        
         return ret
 
     def to_representation(self, instance):
@@ -57,11 +51,15 @@ class EmployeeListSerializer(serializers.ListSerializer):
                 }) 
         return employee_representations
 
-class EmployeeSerializer(serializers.ModelSerializer):
-    user = UserSerializer() 
+class EmployeeSerializer(serializers.ModelSerializer): 
+    user= UserSerializer()
     class Meta:
         model= Employee
         fields = '__all__'
         list_serializer_class = EmployeeListSerializer
 
-        
+
+    def create(self, validated_data):        
+        user_data = validated_data.pop('user')
+        user_instance = User.objects.create(**user_data)
+        return  Employee.objects.create(user_id= user_instance.id,**validated_data)
