@@ -1,5 +1,5 @@
-from .userSerializer import UserSerializer
-from .employeeSerializer import EmployeeSerializer
+from .userSerializer import UserSerializer, UserUpdateSerializer
+from .employeeSerializer import EmployeeSerializer, EmployeeUpdateSerializer
 from .productSerializer import ProductSerializer
 from .bookSerializer import BookSerializer
 from .magazineSerializer import MagazineSerializer
