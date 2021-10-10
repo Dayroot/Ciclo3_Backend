@@ -13,7 +13,7 @@ from bookstoreApp.models import Employee, User
 from bookstoreApp.serializers.employeeSerializer import EmployeeSerializer, EmployeeUpdateSerializer
 
   
-class ChildModelView(views.APIView):
+class BaseProductView(views.APIView):
     
     #Required variables
     custom_serializer = None

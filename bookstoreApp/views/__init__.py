@@ -1,5 +1,5 @@
 #Base views
-from .baseViews import ChildModelView
+from .baseViews import BaseProductView
 
 #user views
 from .employeeView import EmployeeView

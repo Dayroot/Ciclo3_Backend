@@ -1,1 +1,1 @@
-from .childModelView import ChildModelView
+from .baseProductView import BaseProductView
