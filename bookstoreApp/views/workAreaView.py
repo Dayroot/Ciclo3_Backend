@@ -1,20 +1,15 @@
-#Django
-from django.http import Http404
-
-#Django rest framework
-from django.views import generic
-from rest_framework.response import Response
-from rest_framework import views, status, generics, mixins, permissions
-
 #Models
 from bookstoreApp.models.workArea import WorkArea
 
 #Serializers
-from bookstoreApp.serializers.workAreaSerializer import WorkAreaSerializer
+from bookstoreApp.serializers.workAreaSerializer import WorkAreaSerializer, WorkAreaUpdateSerializer
 
-class WorkAreaView(generics.ListCreateAPIView):
-    queryset = WorkArea.objects.all()
-    serializer_class = WorkAreaSerializer
+#Base view
+from .baseViews import BaseIndependentView
+class WorkAreaView(BaseIndependentView):
+    custom_serializer = WorkAreaSerializer
+    update_serializer = WorkAreaUpdateSerializer
+    model = WorkArea
     
 
     

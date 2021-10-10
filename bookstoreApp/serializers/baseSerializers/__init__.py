@@ -1,1 +1,2 @@
-from .baseProductSerializer import BaseProductSerializer, BaseProductUpdateSerializer, BaseProductUpdateListSerializer, BaseProductListSerializer
+from .baseProductSerializer import BaseProductSerializer, BaseProductListSerializer
+from .baseIndependentSerializer import BaseIndepentSerializer,BaseIndepentListSerializer

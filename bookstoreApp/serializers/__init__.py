@@ -1,5 +1,7 @@
 #Base serializers
-from .baseSerializers import BaseProductSerializer, BaseProductUpdateSerializer, BaseProductListSerializer, BaseProductUpdateListSerializer
+from .baseSerializers import BaseProductSerializer, BaseProductListSerializer
+
+from .baseSerializers import BaseIndepentSerializer,BaseIndepentListSerializer
 
 #User serializers
 from .userSerializer import UserSerializer, UserUpdateSerializer
