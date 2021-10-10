@@ -1,0 +1,1 @@
+from .baseProductSerializer import BaseProductSerializer, BaseProductUpdateSerializer, BaseProductUpdateListSerializer, BaseProductListSerializer

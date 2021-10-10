@@ -2,7 +2,7 @@ from django.db.models import fields
 from rest_framework import serializers
 from bookstoreApp.models.sale import Sale
 from bookstoreApp.models.user import User
-from bookstoreApp.models.product import Product
+from bookstoreApp.models.productModels import Product
 
 
 class SaleListSerializer(serializers.ListSerializer):

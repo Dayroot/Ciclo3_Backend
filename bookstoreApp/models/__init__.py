@@ -1,9 +1,13 @@
+#User models
+from .user import User
 from .employee import Employee
 from .workArea import WorkArea
-from .user import User
 
-from .magazine import Magazine
-from .book import Book
-from .product import Product
+#Product models
+from .productModels import Product
+from .productModels import Magazine
+from .productModels import Book
+
+#Business models
 from .sale import Sale
 from .reservation import Reservation

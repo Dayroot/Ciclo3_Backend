@@ -9,7 +9,7 @@ class WorkAreaListSerializer(serializers.ListSerializer):
     def create(self, validated_data): 
         workAreas=[]
         for item in validated_data:            
-            workAreas.append(WorkArea(**item))   
+            workAreas.append(self.child.create(item))   
         return WorkArea.objects.bulk_create(workAreas)
     
     def update(self, instance, validated_data):
@@ -36,11 +36,9 @@ class WorkAreaListSerializer(serializers.ListSerializer):
     def to_representation(self, instance):
         workArea_representations= []
         for workArea in instance:
-            workArea_representations.append({   
-                'id': workArea.id,
-                'name':workArea.name,
-                }) 
+            workArea_representations.append(self.child.to_representation(workArea)) 
         return workArea_representations
+    
 
 class WorkAreaSerializer(serializers.ModelSerializer):  
     class Meta:
@@ -48,3 +46,5 @@ class WorkAreaSerializer(serializers.ModelSerializer):
         fields = '__all__'
         list_serializer_class = WorkAreaListSerializer
 
+    def create(self, validated_data):       
+        return WorkArea(**validated_data)

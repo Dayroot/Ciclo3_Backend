@@ -1,3 +1,13 @@
-from .employeeView import EmployeeDetailView
-from .employeeView import EmployeeCreateView
-from .employeeView import EmployeeUpdateView
+#Base views
+from .baseViews import ChildModelView
+
+#user views
+from .employeeView import EmployeeView
+from .workAreaView import WorkAreaView
+
+#business views
+
+#product views
+from .productViews import MagazineView, BookView
+
+
