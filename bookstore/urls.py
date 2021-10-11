@@ -1,25 +1,25 @@
-"""bookstore URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
 from bookstoreApp import views
 
 urlpatterns = [
+    #staff
     path('admin/', admin.site.urls),
-    path('employee/detail/', views.EmployeeDetailView.as_view()),
-    path('employee/create/', views.EmployeeCreateView.as_view()),
-    path('employee/update/', views.EmployeeUpdateView.as_view()),
+    path('staff-login/', views.StaffLoginView.as_view()),
+    path('employee/', views.EmployeeView.as_view()),
+    path('workarea/', views.WorkAreaView.as_view()),
+    
+    #Business
+    path('sale/', views.SaleView.as_view()),
+    path('reservation/', views.ReservationView.as_view()),
+    
+    #Products
+    path('magazine/', views.MagazineView.as_view()),
+    path('book/', views.MagazineView.as_view()),
+    
+    #Customer
+    path('customer-registration/', views.CustomerRegistrationView.as_view()),
+    path('customer-detail/<int:pk>', views.CustomerDetailView.as_view()),
+    path('login/', views.CustomerLoginView.as_view()),
 ]

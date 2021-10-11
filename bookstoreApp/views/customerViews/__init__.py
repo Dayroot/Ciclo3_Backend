@@ -1,0 +1,3 @@
+from .customerRegistrationView import CustomerRegistrationView
+from .customerDetailView import CustomerDetailView
+from .customerLogin import CustomerLoginView
