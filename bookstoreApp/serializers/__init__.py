@@ -1,16 +1,15 @@
 #Base serializers
 from .baseSerializers import BaseProductSerializer, BaseProductListSerializer
-
 from .baseSerializers import BaseIndepentSerializer,BaseIndepentListSerializer
 
-#User serializers
-from .userSerializer import UserSerializer, UserUpdateSerializer
-from .employeeSerializer import EmployeeSerializer, EmployeeUpdateSerializer
+#Staff serializers
+from .staffSerializers import UserSerializer, UserUpdateSerializer
+from .staffSerializers import EmployeeSerializer, EmployeeUpdateSerializer
+from .staffSerializers import WorkAreaSerializer, WorkAreaUpdateSerializer
 
 #Business serializers
-from .saleSerializer import SaleSerializer
-from .reservationSerializer import ReservationSerializer
-from .workAreaSerializer import WorkAreaSerializer
+from .businessSerializers import SaleSerializer, SaleUpdateSerializer
+from .businessSerializers import ReservationSerializer, ReservationUpdateSerializer
 
 #Products serializers
 from .productSerializers import ProductSerializer, ProductUpdateSerializer

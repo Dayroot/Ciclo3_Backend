@@ -1,7 +1,7 @@
 #Base view
-from .baseViews import BaseProductView
+from ..baseViews import BaseProductView
 #Serializers
-from bookstoreApp.serializers.employeeSerializer import EmployeeSerializer, EmployeeUpdateSerializer
+from bookstoreApp.serializers import EmployeeSerializer, EmployeeUpdateSerializer
 
   
 class EmployeeView(BaseProductView):

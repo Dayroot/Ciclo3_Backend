@@ -1,6 +1,6 @@
 from django.db import models
-from .productModels import Product
-from .user import User
+from .. import Product
+from .. import User
 
 
 class Sale(models.Model):

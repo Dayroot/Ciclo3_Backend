@@ -2,11 +2,13 @@
 from .baseViews import BaseProductView
 from .baseViews import BaseIndependentView
 
-#user views
-from .employeeView import EmployeeView
-from .workAreaView import WorkAreaView
+#staff views
+from .staffViews import EmployeeView
+from .staffViews import WorkAreaView
 
 #business views
+from .businessViews import SaleView
+from .businessViews import ReservationView
 
 #product views
 from .productViews import MagazineView, BookView

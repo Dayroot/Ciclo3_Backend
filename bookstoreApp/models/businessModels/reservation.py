@@ -1,6 +1,6 @@
 from django.db import models
-from .productModels import Product
-from .user import User
+from .. import Product
+from .. import User
 
 class Reservation(models.Model):
     product = models.ForeignKey(Product, related_name='reserved_products', on_delete=models.CASCADE)

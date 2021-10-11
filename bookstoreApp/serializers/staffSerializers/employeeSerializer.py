@@ -2,11 +2,11 @@
 from rest_framework import serializers
 
 #Models
-from bookstoreApp.models.user import User
-from bookstoreApp.models.employee import Employee
+from bookstoreApp.models import User
+from bookstoreApp.models import Employee
 
 #Serializers
-from bookstoreApp.serializers import UserSerializer,UserUpdateSerializer
+from . import UserSerializer,UserUpdateSerializer
 
 
 

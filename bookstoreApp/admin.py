@@ -1,13 +1,13 @@
 from django.contrib import admin
-from .models.employee import Employee
-from .models.workArea import WorkArea
-from .models.user import User
+from .models import Employee
+from .models import WorkArea
+from .models import User
 
-from .models.productModels import Magazine
-from .models.productModels import Book
-from .models.productModels import Product
-from .models.sale import Sale
-from .models.reservation import Reservation
+from .models import Magazine
+from .models import Book
+from .models import Product
+from .models import Sale
+from .models import Reservation
 
 admin.site.register(User)
 admin.site.register(Employee)

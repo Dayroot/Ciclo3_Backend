@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from bookstoreApp.models.workArea import WorkArea
-from .baseSerializers import BaseIndepentSerializer, BaseIndepentListSerializer
+from bookstoreApp.models import WorkArea
+from .. import BaseIndepentSerializer, BaseIndepentListSerializer
 
 
 class WorkAreaSerializer(BaseIndepentSerializer): 

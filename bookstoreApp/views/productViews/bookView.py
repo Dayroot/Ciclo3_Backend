@@ -1,7 +1,7 @@
 #Base view
 from ..baseViews import BaseProductView
 #Serializers
-from bookstoreApp.serializers.productSerializers import BookSerializer, BookUpdateSerializer
+from bookstoreApp.serializers import BookSerializer, BookUpdateSerializer
 
   
 class BookView(BaseProductView):

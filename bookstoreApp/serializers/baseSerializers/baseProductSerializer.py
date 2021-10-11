@@ -1,8 +1,5 @@
 #Django rest framework
 from rest_framework import serializers
-
-
-    
     
 class BaseProductListSerializer(serializers.ListSerializer):
     
