@@ -1,8 +1,17 @@
-from .userSerializer import UserSerializer
-from .employeeSerializer import EmployeeSerializer
-from .productSerializer import ProductSerializer
-from .bookSerializer import BookSerializer
-from .magazineSerializer import MagazineSerializer
-from .saleSerializer import SaleSerializer
-from .reservationSerializer import ReservationSerializer
-from .workAreaSerializer import WorkAreaSerializer
+#Base serializers
+from .baseSerializers import BaseProductSerializer, BaseProductListSerializer
+from .baseSerializers import BaseIndepentSerializer,BaseIndepentListSerializer
+
+#Staff serializers
+from .staffSerializers import UserSerializer, UserUpdateSerializer
+from .staffSerializers import EmployeeSerializer, EmployeeUpdateSerializer
+from .staffSerializers import WorkAreaSerializer, WorkAreaUpdateSerializer
+
+#Business serializers
+from .businessSerializers import SaleSerializer, SaleUpdateSerializer
+from .businessSerializers import ReservationSerializer, ReservationUpdateSerializer
+
+#Products serializers
+from .productSerializers import ProductSerializer, ProductUpdateSerializer
+from .productSerializers import BookSerializer, BookUpdateSerializer
+from .productSerializers import MagazineSerializer, MagazineUpdateSerializer

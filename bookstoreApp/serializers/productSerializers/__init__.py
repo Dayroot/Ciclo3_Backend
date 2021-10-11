@@ -1,0 +1,4 @@
+from bookstoreApp.serializers import BaseProductSerializer,  BaseProductListSerializer
+from .productSerializer import ProductSerializer, ProductUpdateSerializer
+from .bookSerializer import BookSerializer, BookUpdateSerializer
+from .magazineSerializer import MagazineSerializer, MagazineUpdateSerializer
