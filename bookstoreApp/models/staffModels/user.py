@@ -21,16 +21,9 @@ class UserManager(BaseUserManager):
             password = password
         )
         user.is_admin= True
-        #user.is_superuser= True
         user.save(using=self._db)
         return user
     
-
-    def create_client(self,username, password):
-        user= self.create_user(username=username, password=password)
-        user.is_client= True
-        user.save(using=self._db)
-        return user
 class User(AbstractBaseUser, PermissionsMixin):
     
     GENDER_FEMALE= 'F'
@@ -56,11 +49,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_customer= models.BooleanField(default=False)
     
     def save(self, **kwargs):
-        some_salt= 'JK0Xh1i69jxdr5YdJkP'
+        some_salt= 'mMUj0DrIK6vgtdIYepkIxN'
         self.password= make_password(self.password, some_salt)
         super().save(**kwargs)
 
     objects = UserManager()
     USERNAME_FIELD= 'username'
-    EMAIL_FIELD= 'email'
     

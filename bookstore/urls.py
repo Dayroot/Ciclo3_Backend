@@ -2,11 +2,12 @@
 from django.contrib import admin
 from django.urls import path
 from bookstoreApp import views
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
+
 
 urlpatterns = [
     #staff
     path('admin/', admin.site.urls),
-    path('staff-login/', views.StaffLoginView.as_view()),
     path('employee/', views.EmployeeView.as_view()),
     path('workarea/', views.WorkAreaView.as_view()),
     
@@ -21,5 +22,7 @@ urlpatterns = [
     #Customer
     path('customer-registration/', views.CustomerRegistrationView.as_view()),
     path('customer-detail/<int:pk>', views.CustomerDetailView.as_view()),
-    path('login/', views.CustomerLoginView.as_view()),
+    path('login/', TokenObtainPairView.as_view()),
+    path('refresh/', TokenRefreshView.as_view()),
+    
 ]
