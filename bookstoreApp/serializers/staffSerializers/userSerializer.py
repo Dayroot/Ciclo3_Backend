@@ -20,10 +20,15 @@ class UserSerializer(serializers.ModelSerializer):
                     'phone_number':instance.phone_number,
                     'address': instance.address    
                 }
-class UserUpdateSerializer(serializers.ModelSerializer):
+        
+    def create(self, validated_data):
+        return User.objects.create(**validated_data)
+    
+    def update(self, instance, validated_data):
+        return instance.update(**validated_data)
+class UserUpdateSerializer(UserSerializer):
+    
     username= serializers.CharField()
     id= serializers.IntegerField()
-    class Meta:
-        model = User
-        fields= '__all__'
+
         

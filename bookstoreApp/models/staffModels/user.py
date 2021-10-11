@@ -53,7 +53,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField('Phone number',max_length=15, blank=True, null=True)
     address = models.CharField('Address', max_length=50,blank=True, null=True)
     is_employee= models.BooleanField(default=False)
-    is_client= models.BooleanField(default=False)
+    is_customer= models.BooleanField(default=False)
     
     def save(self, **kwargs):
         some_salt= 'JK0Xh1i69jxdr5YdJkP'
