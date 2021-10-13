@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from bookstoreApp.models import Sale
+from bookstoreApp.models import ShoppingCart_Product
 from ..baseSerializers import BaseIndepentSerializer, BaseIndepentListSerializer
 
 
-class SaleSerializer(BaseIndepentSerializer): 
-
+class ShoppingCart_ProductSerializer(BaseIndepentSerializer): 
+    
     class Meta:
-        model= Sale
+        model= ShoppingCart_Product
         fields = '__all__'
         list_serializer_class = BaseIndepentListSerializer
     
@@ -16,9 +16,9 @@ class SaleSerializer(BaseIndepentSerializer):
                 "Quantity": instance.quantity,
                 "Price by unit": instance.product.price,
                 "Total": instance.quantity*instance.product.price,
-                "Datetime": instance.datetime,
-                "Customer fullname": instance.customer.fullname,
-                "Customer identification": instance.customer.identification            
+          
         }
-class SaleUpdateSerializer(SaleSerializer):
-    id= serializers.IntegerField()
+
+class ShoppingCart_ProductUpdateSerializer(ShoppingCart_ProductSerializer):
+    id = serializers.IntegerField()
+    

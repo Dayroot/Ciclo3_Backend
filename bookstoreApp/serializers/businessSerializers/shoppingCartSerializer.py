@@ -1,26 +1,22 @@
 from rest_framework import serializers
-from bookstoreApp.models import Reservation
+from bookstoreApp.models import ShoppingCart
 from ..baseSerializers import BaseIndepentSerializer, BaseIndepentListSerializer
 
 
-class ReservationSerializer(BaseIndepentSerializer): 
+class ShoppingCartSerializer(BaseIndepentSerializer): 
     
     class Meta:
-        model= Reservation
+        model= ShoppingCart
         fields = '__all__'
         list_serializer_class = BaseIndepentListSerializer
     
     def to_representation(self, instance):
         return {
-                "Description": instance.product.description,
-                "Quantity": instance.quantity,
-                "Price by unit": instance.product.price,
-                "Total": instance.quantity*instance.product.price,
                 "Datetime": instance.datetime,
                 "Customer fullname": instance.customer.fullname,
                 "Customer identification": instance.customer.identification            
         }
 
-class ReservationUpdateSerializer(ReservationSerializer):
+class ShoppingCartUpdateSerializer(ShoppingCartSerializer):
     id = serializers.IntegerField()
     

@@ -1,2 +1,2 @@
-from .saleSerializer import SaleSerializer, SaleUpdateSerializer
-from .reservationSerializer import ReservationSerializer, ReservationUpdateSerializer
+from .shoppingCartSerializer import ShoppingCartSerializer, ShoppingCartUpdateSerializer
+from .shoppingCart_ProductSerializer import ShoppingCart_ProductSerializer, ShoppingCart_ProductUpdateSerializer

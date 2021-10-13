@@ -8,8 +8,8 @@ from .staffViews import WorkAreaView
 
 
 #business views
-from .businessViews import SaleView
-from .businessViews import ReservationView
+from .businessViews import ShoppingCartView
+from .businessViews import ShoppingCart_ProductView
 
 #product views
 from .productViews import MagazineView

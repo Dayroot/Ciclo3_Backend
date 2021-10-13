@@ -12,12 +12,13 @@ urlpatterns = [
     path('workarea/', views.WorkAreaView.as_view()),
     
     #Business
-    path('sale/', views.SaleView.as_view()),
-    path('reservation/', views.ReservationView.as_view()),
+    path('shoppingCart/', views.ShoppingCartView.as_view()),
+    path('shoppingCart_Product/', views.ShoppingCart_ProductView.as_view()),
+  
     
     #Products
     path('magazine/', views.MagazineView.as_view()),
-    path('book/', views.MagazineView.as_view()),
+    path('book/', views.BookView.as_view()),
     
     #Customer
     path('customer-registration/', views.CustomerRegistrationView.as_view()),

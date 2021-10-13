@@ -8,8 +8,8 @@ from .staffSerializers import EmployeeSerializer, EmployeeUpdateSerializer
 from .staffSerializers import WorkAreaSerializer, WorkAreaUpdateSerializer
 
 #Business serializers
-from .businessSerializers import SaleSerializer, SaleUpdateSerializer
-from .businessSerializers import ReservationSerializer, ReservationUpdateSerializer
+from .businessSerializers import ShoppingCartSerializer, ShoppingCartUpdateSerializer
+from .businessSerializers import ShoppingCart_ProductSerializer, ShoppingCart_ProductUpdateSerializer
 
 #Products serializers
 from .productSerializers import ProductSerializer, ProductUpdateSerializer

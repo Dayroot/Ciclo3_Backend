@@ -11,6 +11,12 @@ class BaseProductView(views.APIView):
     custom_serializer = None
     update_serializer = None
     
+    
+    #optional variables
+    
+    # Method that will be used to obtain the instances from which the data will be returned. It can take the value of all or filter, by default it will be all.
+    query_method = "all"
+    
     #Internal variables
     model = None
     parent_model= None
@@ -27,7 +33,12 @@ class BaseProductView(views.APIView):
     #List: returns a list with data of all filtered objects
     def get(self,request):
         self.define_variables()
-        instances= self.model.objects.all()
+        if self.query_method is "all" :
+            instances= self.model.objects.all()
+            
+        elif self.query_method is "filter":
+            instances= self.model.objects.filter(**request.data)
+            
         instances_serializer = self.custom_serializer(instances, many=True)
         return Response(instances_serializer.data, status= status.HTTP_200_OK)
     
