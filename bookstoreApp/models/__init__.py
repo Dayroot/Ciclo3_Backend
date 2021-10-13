@@ -9,5 +9,5 @@ from .productModels import Magazine
 from .productModels import Book
 
 #Business models
-from .businessModels import Sale
-from .businessModels import Reservation
+from .businessModels import ShoppingCart
+from .businessModels import ShoppingCart_Product

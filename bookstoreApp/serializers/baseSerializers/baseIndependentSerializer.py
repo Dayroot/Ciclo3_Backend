@@ -40,9 +40,6 @@ class BaseIndepentSerializer(serializers.ModelSerializer):
     def create(self, validated_data):       
         return self.Meta.model(**validated_data)
            
-    """ def __init__(self, instance=None, data=empty, **kwargs):
-        if instance is not None and data is not empty :
-            id= serializers.IntegerField()
-        super().__init__(**kwargs) """
+
         
 

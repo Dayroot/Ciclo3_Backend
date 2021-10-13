@@ -12,6 +12,9 @@ class BaseIndependentView(views.APIView):
     update_serializer=None
     model = None
     
+    # Method that will be used to obtain the instances from which the data will be returned. It can take the value of all or filter.
+    query_method = "all"
+    
     #Get instance: returns the instance with the id indicated , otherwise it throws a 404 exception
     def get_instance(self, pk):
         try:
@@ -22,7 +25,13 @@ class BaseIndependentView(views.APIView):
     
     #List: returns a list with data of all filtered objects
     def get(self,request):
-        instances= self.model.objects.all()
+        
+        if self.query_method is "all" :
+            instances= self.model.objects.all()
+            
+        elif self.query_method is "filter":
+            instances= self.model.objects.filter(**request.data)
+            
         instances_serializer = self.custom_serializer(instances, many=True)
         return Response(instances_serializer.data, status= status.HTTP_200_OK)
     
