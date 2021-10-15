@@ -6,6 +6,6 @@ from bookstoreApp.serializers import MagazineSerializer, MagazineUpdateSerialize
 
   
 class MagazineView(BaseProductView):
-    
+    query_method = "filter"
     custom_serializer = MagazineSerializer
     update_serializer = MagazineUpdateSerializer
