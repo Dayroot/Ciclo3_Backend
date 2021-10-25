@@ -15,8 +15,7 @@ class ShoppingCart_ProductSerializer(BaseIndepentSerializer):
                 "Description": instance.product.description,
                 "Quantity": instance.quantity,
                 "Price by unit": instance.product.price,
-                "Total": instance.quantity*instance.product.price,
-          
+                "Total": instance.quantity*instance.product.price, 
         }
 
 class ShoppingCart_ProductUpdateSerializer(ShoppingCart_ProductSerializer):

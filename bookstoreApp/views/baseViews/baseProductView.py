@@ -75,6 +75,6 @@ class BaseProductView(views.APIView):
         self.define_variables()
         for id in request.data:      
             parent_instance= self.get_parent_instance(id['id']).delete()
-        return Response({'message': 'successful deletion'}, status= status.HTTP_204_NO_CONTENT)
+        return Response({'message': 'successful deletion'}, status= status.HTTP_200_OK)
     
     

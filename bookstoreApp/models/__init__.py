@@ -11,3 +11,5 @@ from .productModels import Book
 #Business models
 from .businessModels import ShoppingCart
 from .businessModels import ShoppingCart_Product
+from .businessModels import Invoice
+from .businessModels import Invoice_Product
