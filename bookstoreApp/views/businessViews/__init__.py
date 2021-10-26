@@ -1,2 +1,4 @@
 from .shoppingCartView import ShoppingCartView
 from .shoppingCart_ProductView import ShoppingCart_ProductView
+from .invoiceView import InvoiceView
+from .invoice_productView import Invoice_ProductView

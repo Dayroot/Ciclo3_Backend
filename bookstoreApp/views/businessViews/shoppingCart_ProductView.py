@@ -8,7 +8,7 @@ from bookstoreApp.serializers import ShoppingCart_ProductSerializer, ShoppingCar
 from ..baseViews import BaseIndependentView
 
 class ShoppingCart_ProductView(BaseIndependentView):
-    query_method = "filter"
+
     custom_serializer = ShoppingCart_ProductSerializer
     update_serializer = ShoppingCart_ProductUpdateSerializer
     model = ShoppingCart_Product

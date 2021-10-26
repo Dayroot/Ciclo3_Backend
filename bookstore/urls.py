@@ -14,8 +14,9 @@ urlpatterns = [
     #Business
     path('shoppingCart/', views.ShoppingCartView.as_view()),
     path('shoppingCart_Product/', views.ShoppingCart_ProductView.as_view()),
+    path('invoice/', views.InvoiceView.as_view()),
+    path('invoice_product/', views.Invoice_ProductView.as_view()),
   
-    
     #Products
     path('magazine/', views.MagazineView.as_view()),
     path('book/', views.BookView.as_view()),
