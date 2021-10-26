@@ -27,4 +27,7 @@ urlpatterns = [
     path('login/', TokenObtainPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),
     
+    #Analysis
+    path('sales-year/', views.SalesPerYearView.as_view()),
+    path('sales-month/', views.SalesPerMonthView.as_view()),
 ]
