@@ -25,15 +25,15 @@ class SalesPerMonthView(views.APIView):
             for element in instance.invoice_product.all():          
                 if element.product.type == "book":
                     if month not in data_result["books"].keys():
-                        data_result["books"][month] = 1
+                        data_result["books"][month] = element.quantity
                     else :
-                        data_result["books"][month] += 1    
+                        data_result["books"][month] += element.quantity
                 elif element.product.type == "magazine":
                     if month not in data_result["magazines"].keys():
-                        data_result["magazines"][month] = 1
+                        data_result["magazines"][month] = element.quantity
                     else :
-                        data_result["magazines"][month] += 1
-            
+                        data_result["magazines"][month] += element.quantity
+        
         return Response(data_result, status= status.HTTP_200_OK)
     
 

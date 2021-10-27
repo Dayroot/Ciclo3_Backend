@@ -1,2 +1,0 @@
-from salesPerYearView import SalesPerYearView
-from salesPerMonthView import SalesPerMonthView

@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('employee/', views.EmployeeView.as_view()),
     path('workarea/', views.WorkAreaView.as_view()),
+    path('staff-login/', views.StaffTokenObtainPairView.as_view()),
     
     #Business
     path('shoppingCart/', views.ShoppingCartView.as_view()),
@@ -22,9 +23,10 @@ urlpatterns = [
     path('book/', views.BookView.as_view()),
     
     #Customer
+    path('customer-management/', views.CustomerManagementView.as_view()),
     path('customer-registration/', views.CustomerRegistrationView.as_view()),
     path('customer-detail/<int:pk>', views.CustomerDetailView.as_view()),
-    path('login/', TokenObtainPairView.as_view()),
+    path('customer-login/', views.CustomerTokenObtainPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),
     
     #Analysis

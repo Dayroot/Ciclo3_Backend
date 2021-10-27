@@ -20,8 +20,11 @@ admin.site.register(Product)
 #business
 from .models import ShoppingCart
 from .models import ShoppingCart_Product
+from .models import Invoice
+from .models import Invoice_Product
 
 admin.site.register(ShoppingCart)
 admin.site.register(ShoppingCart_Product)
-
+admin.site.register(Invoice)
+admin.site.register(Invoice_Product)
 

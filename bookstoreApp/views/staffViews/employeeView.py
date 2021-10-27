@@ -5,7 +5,7 @@ from bookstoreApp.serializers import EmployeeSerializer, EmployeeUpdateSerialize
 
   
 class EmployeeView(BaseProductView):
-    query_method = "filter"
+    
     custom_serializer = EmployeeSerializer
     update_serializer = EmployeeUpdateSerializer
     

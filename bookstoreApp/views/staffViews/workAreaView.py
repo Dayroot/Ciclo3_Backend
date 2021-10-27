@@ -7,7 +7,7 @@ from bookstoreApp.serializers import WorkAreaSerializer, WorkAreaUpdateSerialize
 #Base view
 from ..baseViews import BaseIndependentView
 class WorkAreaView(BaseIndependentView):
-    query_method = "filter"
+    
     custom_serializer = WorkAreaSerializer
     update_serializer = WorkAreaUpdateSerializer
     model = WorkArea

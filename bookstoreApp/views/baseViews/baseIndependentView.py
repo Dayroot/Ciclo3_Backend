@@ -14,6 +14,7 @@ class BaseIndependentView(views.APIView):
     
     # Method that will be used to obtain the instances from which the data will be returned. It can take the value of all or filter.
     query_method = "all"
+    custom_filter = None
     
     #Get instance: returns the instance with the id indicated , otherwise it throws a 404 exception
     def get_instance(self, pk):
@@ -30,7 +31,10 @@ class BaseIndependentView(views.APIView):
             instances= self.model.objects.all()
             
         elif self.query_method is "filter":
-            instances= self.model.objects.filter(**request.data)
+            if self.custom_filter is not None:
+                instances= self.model.objects.filter(**self.custom_filter)
+            else:
+                instances= self.model.objects.filter(**request.data)
             
         instances_serializer = self.custom_serializer(instances, many=True)
         return Response(instances_serializer.data, status= status.HTTP_200_OK)

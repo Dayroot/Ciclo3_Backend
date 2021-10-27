@@ -5,6 +5,7 @@ from .baseViews import BaseIndependentView
 #staff views
 from .staffViews import EmployeeView
 from .staffViews import WorkAreaView
+from .staffViews import StaffTokenObtainPairView
 
 
 #business views
@@ -20,7 +21,9 @@ from .productViews import BookView
 #customer views
 from .customerViews import CustomerRegistrationView
 from .customerViews import CustomerDetailView
+from .customerViews import CustomerManagementView
+from .customerViews import CustomerTokenObtainPairView
 
 #analysis
-from .analysisView import SalesPerYearView
-from .analysisView import SalesPerMonthView
+from .analysisViews import SalesPerYearView
+from .analysisViews import SalesPerMonthView

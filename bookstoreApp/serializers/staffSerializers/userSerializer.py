@@ -1,12 +1,14 @@
-from bookstoreApp.models import User
+from bookstoreApp.models import User, ShoppingCart
 from rest_framework import serializers
+from .. import BaseIndepentSerializer, BaseIndepentListSerializer
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(BaseIndepentSerializer):
     
     class Meta:
         model = User
         fields= '__all__'
+        list_serializer_class = BaseIndepentListSerializer
         
     def to_representation(self, instance):
         return {
@@ -22,7 +24,10 @@ class UserSerializer(serializers.ModelSerializer):
                 }
         
     def create(self, validated_data):
-        return User.objects.create(**validated_data)
+        user = User.objects.create(**validated_data)
+        if validated_data["is_customer"] == True:
+            shopping_cart = ShoppingCart.objects.create(customer_id=user.id)
+        return user
     
     def update(self, instance, validated_data):
         return instance.update(**validated_data)

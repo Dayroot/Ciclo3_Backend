@@ -12,8 +12,8 @@ from .businessSerializers import ShoppingCartSerializer, ShoppingCartUpdateSeria
 from .businessSerializers import ShoppingCart_ProductSerializer, ShoppingCart_ProductUpdateSerializer
 from .businessSerializers import Invoice_ProductSerializer, Invoice_ProductUpdateSerializer
 from .businessSerializers import InvoiceSerializer, InvoiceUpdateSerializer
-# from .businessSerializers import
-# from .businessSerializers import
+from .businessSerializers import CustomerManagementSerializer, CustomerManagementUpdateSerializer
+
 
 #Products serializers
 from .productSerializers import ProductSerializer, ProductUpdateSerializer
