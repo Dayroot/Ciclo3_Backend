@@ -15,7 +15,7 @@ from bookstoreApp.models import User
 #Serializer
 from bookstoreApp.serializers import UserSerializer
 
-class CustomerDetailView(generics.RetrieveAPIView):
+class UserDetailView(generics.RetrieveAPIView):
     
     queryset = User.objects.all()
     serializer_class = UserSerializer

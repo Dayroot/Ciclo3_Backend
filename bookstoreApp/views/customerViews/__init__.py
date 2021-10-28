@@ -1,3 +1,3 @@
 from .customerRegistrationView import CustomerRegistrationView
-from .customerDetailView import CustomerDetailView
 from .customerTokenObtainPairView import CustomerTokenObtainPairView
+from .customerDeleteAccountView import CustomerDeleteAccountView
