@@ -1,3 +1,4 @@
 from .userSerializer import UserSerializer, UserUpdateSerializer
 from .employeeSerializer import EmployeeSerializer, EmployeeUpdateSerializer
 from .workAreaSerializer import WorkAreaSerializer, WorkAreaUpdateSerializer
+from .customerManagementSerializer import CustomerManagementSerializer, CustomerManagementUpdateSerializer

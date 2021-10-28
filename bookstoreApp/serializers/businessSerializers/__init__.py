@@ -2,4 +2,4 @@ from .shoppingCartSerializer import ShoppingCartSerializer, ShoppingCartUpdateSe
 from .shoppingCart_ProductSerializer import ShoppingCart_ProductSerializer, ShoppingCart_ProductUpdateSerializer
 from .invoice_productSerializer import Invoice_ProductSerializer, Invoice_ProductUpdateSerializer
 from .invoiceSerializer import InvoiceSerializer, InvoiceUpdateSerializer
-from .customerManagementSerializer import CustomerManagementSerializer, CustomerManagementUpdateSerializer
+

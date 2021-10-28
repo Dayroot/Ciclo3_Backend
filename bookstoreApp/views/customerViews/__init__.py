@@ -1,4 +1,3 @@
 from .customerRegistrationView import CustomerRegistrationView
 from .customerDetailView import CustomerDetailView
-from .customerManagementView import CustomerManagementView
 from .customerTokenObtainPairView import CustomerTokenObtainPairView

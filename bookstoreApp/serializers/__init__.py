@@ -6,13 +6,14 @@ from .baseSerializers import BaseIndepentSerializer,BaseIndepentListSerializer
 from .staffSerializers import UserSerializer, UserUpdateSerializer
 from .staffSerializers import EmployeeSerializer, EmployeeUpdateSerializer
 from .staffSerializers import WorkAreaSerializer, WorkAreaUpdateSerializer
+from .staffSerializers import CustomerManagementSerializer, CustomerManagementUpdateSerializer
 
 #Business serializers
 from .businessSerializers import ShoppingCartSerializer, ShoppingCartUpdateSerializer
 from .businessSerializers import ShoppingCart_ProductSerializer, ShoppingCart_ProductUpdateSerializer
 from .businessSerializers import Invoice_ProductSerializer, Invoice_ProductUpdateSerializer
 from .businessSerializers import InvoiceSerializer, InvoiceUpdateSerializer
-from .businessSerializers import CustomerManagementSerializer, CustomerManagementUpdateSerializer
+
 
 
 #Products serializers
