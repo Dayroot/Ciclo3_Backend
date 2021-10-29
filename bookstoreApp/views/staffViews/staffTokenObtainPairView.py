@@ -11,6 +11,7 @@ class StaffTokenObtainPairSerializer(TokenObtainPairSerializer):
             data['refresh'] = str(refresh)
             data['access'] = str(refresh.access_token)
             data['work_area'] = self.user.employees.work_area.name
+            data['fullname'] = self.user.fullname
             return data
         else:
             raise exceptions.AuthenticationFailed(
