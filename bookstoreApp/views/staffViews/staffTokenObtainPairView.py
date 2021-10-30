@@ -19,6 +19,5 @@ class StaffTokenObtainPairSerializer(TokenObtainPairSerializer):
                 'no_active_account',
             )
             
-
 class StaffTokenObtainPairView(TokenObtainPairView):
     serializer_class = StaffTokenObtainPairSerializer
